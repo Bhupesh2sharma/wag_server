@@ -2,7 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const fileUpload = require("express-fileupload");
 const blogRoutes = require("./routes/blogRoutes");
-
+const projectRoutes = require("./routes/projectRoutes");
 const app = express();
 
 // ✅ CORS Configuration
@@ -27,6 +27,7 @@ app.use(fileUpload());
 
 // ✅ Routes
 app.use("/api/blogs", blogRoutes);
+app.use("/api/project", projectRoutes);
 
 // ✅ Fallback Route (optional, for testing)
 app.get("/", (req, res) => {
